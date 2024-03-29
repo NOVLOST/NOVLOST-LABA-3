@@ -1,12 +1,15 @@
+#15.Формируется матрица F следующим образом: если в Е количество чисел, больших К в четных столбцах в области 1 больше,
+# чем сумма чисел в нечетных строках в области 3, то поменять в Е симметрично области 1 и 3 местами, иначе В и С поменять местами несимметрично.
+# При этом матрица А не меняется. После чего вычисляется выражение: A*F– K*AT . Выводятся по мере формирования А, F и все матричные операции последовательно.
 import random
 sumE=0
 sumB=0
 K=int(input("Введите К="))
 N=int(input("Введите N="))
-D = [ [random.randrange(-10, 10, 1)]*(N//2)  for i in range(N//2) ]
-E = [ [random.randrange(-10, 10, 1)]*(N//2)  for i in range(N//2) ]
-C = [ [random.randrange(-10, 10, 1)]*(N//2)  for i in range(N//2) ]
-B = [ [random.randrange(-10, 10, 1)]*(N//2) for i in range(N//2) ]
+D =  [[random.randint(-10,10 ) for j in range(N//2)] for i in range(N//2)]
+E =  [[random.randint(-10,10 ) for j in range(N//2)] for i in range(N//2)]
+C =  [[random.randint(-10,10 ) for j in range(N//2)] for i in range(N//2)]
+B =  [[random.randint(-10,10 ) for j in range(N//2)] for i in range(N//2)]
 G = [ [0]*((N//2)*2) for i in range((N//2)*2) ]
 H = [ [0]*((N//2)*2) for i in range((N//2)*2) ]
 A = [D[i] + E[i]  for i in range(N//2)]
@@ -48,6 +51,13 @@ print("Транспонированная матрица А умноженная
 for g in range(len(A)):
     for i in range(len(A[0])): G[g][i]=G[g][i]-H[g][i]
 print("Конечный результат\n",G,"\n")
+
+
+
+
+
+
+
 
 
 
